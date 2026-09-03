@@ -1,0 +1,1 @@
+if(sessionStorage.getItem("nf_admin_session")!=="demo")location.href="index.html";document.querySelector("#logout")?.addEventListener("click",()=>{sessionStorage.removeItem("nf_admin_session");location.href="index.html"});

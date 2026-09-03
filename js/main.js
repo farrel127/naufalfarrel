@@ -1,0 +1,9 @@
+document.addEventListener("DOMContentLoaded",()=>{const d=window.PORTFOLIO_DATA;
+const skills=document.querySelector("#skills-grid");if(skills)skills.innerHTML=d.skills.map(s=>`<article class="skill reveal"><b>${s.name}</b><small>${s.level}</small></article>`).join("");
+const projects=document.querySelector("#projects-grid");if(projects)projects.innerHTML=d.projects.map(p=>`<a class="project-card reveal" href="projects/project-detail.html?id=${p.id}"><div class="project-image"><div>${p.image}</div></div><div class="project-info"><small>${p.category}</small><h3>${p.title} ↗</h3><p>${p.description}</p><div class="tags">${p.tech.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div></a>`).join("");
+const exp=document.querySelector("#experience-list");if(exp)exp.innerHTML=d.experience.map(x=>`<article class="timeline-item reveal"><time>${x.year}</time><div><h3>${x.role}</h3><p>${x.org}</p></div><p>${x.desc}</p></article>`).join("");
+const cert=document.querySelector("#certificates-grid");if(cert)cert.innerHTML=d.certificates.map(c=>`<article class="cert reveal"><small>${c.type}</small><h3>${c.title}</h3><p>${c.issuer}</p><small>${c.desc}</small></article>`).join("");
+const header=document.querySelector("#site-header");window.addEventListener("scroll",()=>header?.classList.toggle("scrolled",scrollY>30),{passive:true});
+const toggle=document.querySelector("#menu-toggle"),nav=document.querySelector("#nav");toggle?.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",open)});nav?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+setTimeout(()=>document.querySelector("#app-loader")?.classList.add("hide"),450);
+});
