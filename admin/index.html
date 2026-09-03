@@ -1,3 +1,142 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="css/admin.css"><title>Admin — NF Portfolio</title></head>
-<body><main class="login"><div class="login-card"><a class="admin-brand" href="../index.html">NF<span>.</span></a><p class="eyebrow">PRIVATE AREA</p><h1>Welcome back.</h1><p>Sign in to manage portfolio content.</p><form id="login-form"><label>Username<input id="username" autocomplete="username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" required></label><button>Sign in <span>↗</span></button><p class="form-error" id="login-error"></p></form></div></main><script src="js/admin-auth.js"></script></body></html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+```
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+>
+
+<link
+    rel="stylesheet"
+    href="css/admin.css"
+>
+
+<title>Admin — NF Portfolio</title>
+```
+
+</head>
+
+<body>
+
+```
+<main class="login">
+
+    <div class="login-card">
+
+        <!-- ADMIN BRAND -->
+
+        <a
+            class="admin-brand"
+            href="../index.html"
+            aria-label="Back to portfolio"
+        >
+            NF<span>.</span>
+        </a>
+
+
+        <!-- LOGIN HEADER -->
+
+        <p class="eyebrow">
+            PRIVATE AREA
+        </p>
+
+        <h1>
+            Welcome back.
+        </h1>
+
+        <p>
+            Sign in to manage portfolio content.
+        </p>
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="login-form">
+
+            <!-- USERNAME -->
+
+            <label>
+
+                Username
+
+                <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    autocomplete="username"
+                    required
+                >
+
+            </label>
+
+
+            <!-- PASSWORD -->
+
+            <label>
+
+                Password
+
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </label>
+
+
+            <!-- SUBMIT BUTTON -->
+
+            <button
+                type="submit"
+                id="login-button"
+            >
+
+                <span id="login-button-text">
+                    Sign in
+                </span>
+
+                <span>
+                    ↗
+                </span>
+
+            </button>
+
+
+            <!-- ERROR / STATUS MESSAGE -->
+
+            <p
+                class="form-error"
+                id="login-error"
+                role="alert"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<!--
+    API harus dimuat terlebih dahulu
+    karena admin-auth.js menggunakan
+    fungsi loginAdmin()
+-->
+
+<script src="js/admin-api.js"></script>
+
+<script src="js/admin-auth.js"></script>
+```
+
+</body>
+
+</html>
