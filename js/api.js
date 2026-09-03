@@ -21,3 +21,37 @@ async function getProjects() {
     return [];
   }
 }
+async function getProjectById(id) {
+
+    try {
+
+        const response = await fetch(
+            `${API_URL}?action=project&id=${encodeURIComponent(id)}`
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                "Network response was not OK"
+            );
+        }
+
+        const result = await response.json();
+
+        if (!result.success) {
+            throw new Error(
+                result.message || "Project not found"
+            );
+        }
+
+        return result.data;
+
+    } catch (error) {
+
+        console.error(
+            "Project API Error:",
+            error
+        );
+
+        return null;
+    }
+}
